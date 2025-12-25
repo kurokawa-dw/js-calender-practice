@@ -51,7 +51,6 @@ function buildCalendarCells(year, month) {
     const ymd = formatYMD(d);
 
     cells.push({
-      date: d,
       ymd,
       day: d.getDate(),
       isCurrentMonth: d.getMonth() === month,

@@ -6,7 +6,7 @@ const nextBtn = $("#nextBtn");
 const elDow = $("#dow");
 const elGrid = $("#grid");
 
-const DOW = ["日", "月", "火", "水", "木", "金", "土"];
+const DOW_LABELS = ["日", "月", "火", "水", "木", "金", "土"];
 
 // state
 const state = {
@@ -27,19 +27,20 @@ function isSameYMD(a, b) {
 // ===== core: 42マス作る =====
 function buildCalenderCell(year, month) {
   const first = new Date(year, month, 1);
-  const weekOffset = first.getDay();
-  const start = new Date(year, month, 1 - weekOffset);
+  const startOffset = first.getDay();
+  const start = new Date(year, month, 1 - startOffset);
 
+  const today = new Date();
   const cells = [];
 
   for (let i = 0; i < 42; i++) {
-    const day = new Date(start);
-    day.setDate(day.getDate() + i);
+    const d = new Date(start);
+    d.setDate(d.getDate() + i);
 
     cells.push({
-      date: day.getDate(),
-      isCurrentMonth: day.getMonth() === month,
-      isToday: isSameYMD(day, new Date()),
+      day: d.getDate(),
+      isCurrentMonth: d.getMonth() === month,
+      isToday: isSameYMD(d, today),
     });
   }
 
@@ -54,7 +55,7 @@ function buildCalenderCell(year, month) {
 const render = () => {
   elTitle.textContent = `${state.year}年 ${state.month + 1}月`;
 
-  elDow.innerHTML = DOW.map((d) => `<div>${d}</div>`).join("");
+  elDow.innerHTML = DOW_LABELS.map((d) => `<div>${d}</div>`).join("");
 
   const cells = buildCalenderCell(state.year, state.month);
 
@@ -69,7 +70,7 @@ const render = () => {
         .join(" ");
 
       return `<div class="${classList}">
-      <span class="daynum">${cell.date}</span>
+      <span class="daynum">${cell.day}</span>
     </div>`;
     })
     .join("");
