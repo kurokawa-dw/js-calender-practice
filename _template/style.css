@@ -1,5 +1,5 @@
 :root {
-  --border: #e5e7eb;
+  --border: #afafaf;
   --text: #111827;
   --muted: #6b7280;
   --bg: #ffffff;
@@ -81,14 +81,20 @@ body {
 .cell {
   min-height: 64px;
   border-right: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  background-color: #f4f4f4;
   padding: 8px;
-  cursor: pointer;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cell:nth-child(7n) {
   border-right: none;
+}
+.cell:nth-child(-n + 7) {
+  border-top: none;
 }
 
 .daynum {
@@ -118,10 +124,4 @@ body {
   background: var(--selected);
   color: var(--selectedText);
   font-weight: 700;
-}
-
-.info {
-  margin-top: 10px;
-  color: var(--muted);
-  font-size: 13px;
 }
