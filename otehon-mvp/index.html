@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vanilla JS Calendar</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <main class="app">
+    <header class="cal-header">
+      <button class="nav" id="prevBtn" aria-label="前の月">‹</button>
+
+      <h1 class="title" id="title"></h1>
+
+      <button class="nav" id="nextBtn" aria-label="次の月">›</button>
+    </header>
+
+    <section class="cal">
+      <div class="dow" id="dow"></div>
+      <div class="grid" id="grid" aria-label="カレンダー"></div>
+    </section>
+
+
+  </main>
+
+  <script src="./main.js"></script>
+</body>
+
+</html>

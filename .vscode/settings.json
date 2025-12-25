@@ -1,0 +1,41 @@
+{
+  "liveServer.settings.root": "./dist",
+  "editor.suggest.showFolders": true,
+  "editor.suggest.showFiles": true,
+  "html.format.wrapLineLength": 1000,
+  "path-autocomplete.pathMappings": {
+    "/": "${folder}/public/"
+  },
+
+  // 保存時にフォーマット
+  "editor.formatOnSave": true,
+
+  "css.format.spaceAroundSelectorSeparator": true,
+  "scss.format.spaceAroundSelectorSeparator": true,
+
+  // ★ Vueファイルは Prettier でフォーマット
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+
+  // ★ ここから ESLint 連携用の追記
+  // ESLint に見てほしい言語
+  // "eslint.validate": [
+  //   "javascript",
+  //   "javascriptreact",
+  //   "typescript",
+  //   "typescriptreact",
+  //   "vue"
+  // ],
+
+  // // 保存時に ESLint の auto-fix も走らせる
+  // "editor.codeActionsOnSave": {
+	// 	"source.fixAll.eslint": "explicit"
+	// }
+}
