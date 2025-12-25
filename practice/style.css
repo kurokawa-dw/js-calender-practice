@@ -90,6 +90,9 @@ body {
 .cell:nth-child(7n) {
   border-right: none;
 }
+.cell:nth-child(7n + 1):not(.outside) {
+  color: red;
+}
 
 .daynum {
   display: inline-grid;
